@@ -1,0 +1,94 @@
+
+<!-- Button trigger modal -->
+<div class="modal fade registermodel-lg" id="registermodel" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-centered"  role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle" >Register</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form #register="ngForm">
+            <div class="form-row">
+              <div class="form-group form-group1  col-md-4">
+                <!--<label for="inputEmail4">Email</label>-->
+                <div class="col-sm-4 text-center">
+                  <div class="kv-avatar">
+                      <div class="file-loading">
+                          <input id="avatar-1" name="avatar-1" type="file" required>
+                      </div>
+                  </div>
+                 
+              </div>
+              </div>
+            <div class="col-md-8 form-group form-row">
+                <div class="form-group col-md-6">
+                   <input type="text" class="form-control" name="fname" placeholder="First Name">
+                </div>
+                <div class="form-group col-md-6">
+                  <input type="text" class="form-control" name="lname" placeholder="Last Name">
+                </div>
+                <div class="form-group col-md-12">
+                  <input type="email" class="form-control" name="email" placeholder="Email">
+                </div>
+                <div class="form-group col-md-12">
+                  <input type="text" class="form-control" name="number" placeholder="(025)-99999">
+                </div>
+                <div class="col-md-12 form-group">
+                  <table>
+                    <tr>
+                      <td style="padding-right:9px;font-size: 12px;">Age</td>
+                      <td><mat-slider name="age" thumbLabel min="20" max="60" step="1" value="1"></mat-slider></td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="col-md-12 form-group">
+                  <select name="state" class="form-control">
+                    <option value="">State</option>
+                    <option value="maharashtra">Maharshtra</option>
+                  </select>
+                </div>
+                <div class="col-md-12 form-group">
+                  <select name="country" class="form-control">
+                    <option value="">Country</option>
+                    <option value="india">India</option>
+                  </select>
+                </div>
+                <div class="col-md-12 form-group" >
+                  <select name="address" class="form-control"  [(ngModel)]="optionvalue">
+                    <option selected>Address</option>
+                    <option value="home">Home</option>
+                    <option value="office">Office</option>
+                  </select>
+                </div>
+              <div class="col-md-12 form-group" *ngIf="optionvalue == 'home'">
+                <textarea rows="1" type="text" class="form-control" name="addres1" placeholder="Home Address1"></textarea>
+                <br>
+                <textarea rows="1" type="text" class="form-control" name="addres2" placeholder="Home Address2"></textarea>
+              </div>
+              <div class="col-md-12 form-group" *ngIf="optionvalue == 'office'">
+                <textarea rows="1" type="text" class="form-control" name="addres1" placeholder="Company Address1"></textarea>
+                <br>
+                <textarea rows="1" type="text" class="form-control" name="addres2" placeholder="Company Address2"></textarea>
+              
+              </div>
+                 
+                <div class="form-group">
+                  <mat-checkbox name="subscribe" class="example-margin">Check me!</mat-checkbox>
+                </div>
+               
+              </div>
+            </div>
+          
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button mat-button  data-dismiss="modal">Close</button>
+          <button mat-raised-button color="accent">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
